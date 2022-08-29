@@ -148,7 +148,11 @@ class SequelizeHistory {
 				unique: true
 			},
 			modelId: {
-				type: this.model.rawAttributes.id.type.keys === 'INTEGER' ? sequelize.INTEGER : sequelize.UUID,
+				type: this.model.rawAttributes.id
+					? this.model.rawAttributes.id.type.key === 'INTEGER'
+						? sequelize.INTEGER
+						: sequelize.UUID
+					: sequelize.INTEGER,
 				allowNull: true
 			},
 			archivedAt: {

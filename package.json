@@ -2,7 +2,7 @@
   "name": "@sthumma/sequelize-history",
   "description": "Creates a revision history for instances of a given Sequelize model.",
   "author": "Sridhar Thumma <sridhar4thumma@gmail.com>",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "main": "index.js",
   "scripts": {
     "coverage": "nyc npm run test",
@@ -19,11 +19,11 @@
   },
   "devDependencies": {
     "jsdoc": "^3.6.3",
-    "nyc": "^14.1.1",
+    "nyc": "^15.1.0",
     "sequelize": "^4.44.3",
-    "sqlite3": "^4.1.0",
+    "sqlite3": "^5.0.11",
     "tap-spec": "^5.0.0",
-    "tape": "^4.11.0",
+    "tape": "^5.6.0",
     "xo": "^0.52.1"
   },
   "bugs": {

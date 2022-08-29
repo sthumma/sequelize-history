@@ -135,6 +135,7 @@ The constructor and factory methods accept the following instantiation object pr
 - **modelSuffix** `string` - string to append to tracked model's name when creating name of tracking model
 - **excludedAttributes** `array` - collection of model attributes to be excluded when creating history model from the target model
 - **excludedAttributeProperties** `array` - collection of attribute properties to ignore when duplicating the target model's attributes
+- **modelOptions** `object` - Sequelize options for history table
 
 **NOTE** - if `authorFieldName` is set, `hasMany` and `belongsTo` relationships will be created between the history model and the target model.
 This is to ensure that constraints are not enforced in creating the associations.
