@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "jsdoc": "^3.6.3",
-    "nyc": "^14.1.1",
+    "nyc": "^15.1.0",
     "sequelize": "^4.44.3",
     "sqlite3": "^4.1.0",
     "tap-spec": "^5.0.0",
