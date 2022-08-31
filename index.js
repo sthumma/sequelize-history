@@ -206,32 +206,36 @@ class SequelizeHistory {
 	 * @return {Sequelize.Model} - Instance representing the revision
 	 */
 	insertHook(doc, options) {
-		let dataValues = doc._previousDataValues || doc.dataValues || doc;
 
-		// for upsert action - if id is null which means insert, return null. create history record only for update
+		//clone the sequelize model, don't modify data directly on it
+		const dataSet = cloneDeep(doc);
+
+		let dataValues = dataSet._previousDataValues || dataSet.dataValues;
+
 		if (!dataValues) {
-			if (doc && doc.id) {
-				dataValues = doc;
+			if (dataSet && dataSet.id) {
+				dataValues = dataSet;
 			} else {
-				return null;
+				dataValues = null;
 			}
 		}
+		if (dataValues) {
+			dataValues.modelId = dataValues.id;
 
-		dataValues.modelId = dataValues.id;
+			// Grab the static revision author property from the tracked class
+			// and null it out after its first use when called via an instance
+			if (typeof this.options.authorFieldName === 'string' &&
+				typeof this.model._sequelizeHistoryProps !== 'undefined') {
+				dataValues[this.options.authorFieldName] = this.model._sequelizeHistoryProps._authorId;
+				this.model._sequelizeHistoryProps._authorId = null;
+			}
 
-		// Grab the static revision author property from the tracked class
-		// and null it out after its first use when called via an instance
-		if (typeof this.options.authorFieldName === 'string' &&
-			typeof this.model._sequelizeHistoryProps !== 'undefined') {
-			dataValues[this.options.authorFieldName] = this.model._sequelizeHistoryProps._authorId;
-			this.model._sequelizeHistoryProps._authorId = null;
+			delete dataValues.id;
+
+			return this.modelHistory.create(dataValues, {
+				transaction: options.transaction
+			});
 		}
-
-		delete dataValues.id;
-
-		return this.modelHistory.create(dataValues, {
-			transaction: options.transaction
-		});
 	}
 
 	/**

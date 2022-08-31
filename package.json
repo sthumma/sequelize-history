@@ -2,7 +2,7 @@
   "name": "@sthumma/sequelize-history",
   "description": "Creates a revision history for instances of a given Sequelize model.",
   "author": "Sridhar Thumma <sridhar4thumma@gmail.com>",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "main": "index.js",
   "scripts": {
     "coverage": "nyc npm run test",
