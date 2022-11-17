@@ -18,7 +18,7 @@
     "@snyk/protect": "^1.657.0"
   },
   "devDependencies": {
-    "jsdoc": "^3.6.3",
+    "jsdoc": "^4.0.0",
     "nyc": "^15.1.0",
     "sequelize": "^6.25.5",
     "sqlite3": "^5.0.11",
