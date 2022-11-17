@@ -3,7 +3,7 @@
 # sequelize-history
 > Creates a revision history for instances of a given Sequelize model.
 
-This module will setup automatic revision tracking for any [Sequelize](https://github.com/sequelize/sequelize) model.
+This module will set up automatic revision tracking for any [Sequelize](https://github.com/sequelize/sequelize) model.
 This is effectively a re-write of [`sequelize-temporal`](https://github.com/bonaval/sequelize-temporal), which deserves any and all due credit.
 More specifically...
 
@@ -86,6 +86,8 @@ It also results in your original model getting a new `setRevisionAuthor` static 
 
 Use this method by passing in any appropriate value before updating your original model instances, and the passed value will be written to the `authorFieldName` column of the tracking table.
 The value is reset immediately after the next update is written to the history model.
+
+This module supports both Sequelize 5 and Sequelize 6+. Tested against both the versions.
 
 _This functionality is available to both single instance updates and static bulk updates._
 
