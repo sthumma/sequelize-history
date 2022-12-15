@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.20",
-    "@snyk/protect": "^1.657.0"
+    "@snyk/protect": "^1.1061.0"
   },
   "devDependencies": {
     "jsdoc": "^4.0.0",
