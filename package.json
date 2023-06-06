@@ -2,7 +2,7 @@
   "name": "@sthumma/sequelize-history",
   "description": "Creates a revision history for instances of a given Sequelize model.",
   "author": "Sridhar Thumma <sridhar4thumma@gmail.com>",
-  "version": "1.4.5",
+  "version": "1.4.4",
   "main": "index.js",
   "scripts": {
     "coverage": "nyc npm run test",
@@ -14,21 +14,20 @@
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "@snyk/protect": "^1.657.0",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "@snyk/protect": "^1.657.0"
   },
   "devDependencies": {
-    "eslint": "8.22.0",
-    "eslint-config-prettier": "^8.5.0",
     "jsdoc": "^4.0.0",
     "nyc": "^15.1.0",
-    "prettier": "^2.1.0",
     "sequelize": "^6.25.5",
     "sqlite3": "^5.0.11",
-    "tap-spec": "^2.2.2",
+    "tap-spec": "^5.0.0",
     "tape": "^5.6.0",
-    "trim": ">=0.0.3",
-    "xo": "^0.52.1"
+    "xo": "^0.52.1",
+    "eslint": "8.35.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.1.0"
   },
   "bugs": {
     "url": "https://github.com/sthumma/sequelize-history/issues"
